@@ -1,7 +1,11 @@
 package edu.uml.cs.balloons;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import org.ros.android.RosActivity;
 import org.ros.node.NodeConfiguration;
@@ -40,5 +44,10 @@ public class MainActivity extends RosActivity {
             // Socket problem
             Log.e("Balloons", "socket error trying to get networking information from the master uri");
         }
+    }
+
+    public void onBeginButtonClick(View v) {
+        Intent intent = new Intent(this, BalloonActivity.class);
+        startActivity(intent);
     }
 }
